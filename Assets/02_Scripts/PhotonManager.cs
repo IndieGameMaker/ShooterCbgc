@@ -23,5 +23,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("포톤 서버에 접속 완료");
+
+        // 로비에 입장(접속) 요청
+        PhotonNetwork.JoinLobby();
     }
 }
