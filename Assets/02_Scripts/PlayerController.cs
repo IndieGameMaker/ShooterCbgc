@@ -2,6 +2,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+// f3610a01-731b-480c-b58c-0e090a363b26
+
 public class PlayerController : MonoBehaviour
 {
     // 람다식 기호 발음 : go to, goes to
@@ -14,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pv = GetComponent<PhotonView>();
+        //this.enabled = pv.IsMine;
     }
 
     void Update()
