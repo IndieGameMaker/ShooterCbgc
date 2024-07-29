@@ -43,7 +43,22 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         // Room 속성을 정의
         RoomOptions ro = new RoomOptions
         {
-
+            MaxPlayers = 20,
+            IsOpen = true,
+            IsVisible = true,
         };
+
+        // Room 생성 요청
+        PhotonNetwork.CreateRoom("MyRoom", ro);
+    }
+
+    public override void OnCreatedRoom()
+    {
+        Debug.Log("방 생성 완료 !!");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("방 입장 완료 !!");
     }
 }
