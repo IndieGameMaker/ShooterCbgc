@@ -27,4 +27,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         // 로비에 입장(접속) 요청
         PhotonNetwork.JoinLobby();
     }
+
+    // 로비에 입장 완료시 호출되는 콜백
+    public override void OnJoinedLobby()
+    {
+        Debug.Log("로비에 입장 완료");
+    }
 }
