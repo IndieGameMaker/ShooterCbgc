@@ -36,5 +36,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        Debug.Log($"무작위 입장 실퍠 : {message}");
 
+        // Room 속성을 정의
+        RoomOptions ro = new RoomOptions
+        {
+
+        };
+    }
 }
