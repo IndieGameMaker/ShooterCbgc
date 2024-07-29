@@ -1,4 +1,6 @@
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,13 +9,17 @@ public class PlayerController : MonoBehaviour
     private float v => Input.GetAxis("Vertical");
     private float r => Input.GetAxis("Mouse X");
 
+    private PhotonView pv;
+
     void Start()
     {
-
+        pv = GetComponent<PhotonView>();
     }
 
     void Update()
     {
+        if (pv.IsMine == false) return;
+
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(moveDir.normalized * Time.deltaTime * 6.0f);
         transform.Rotate(Vector3.up * Time.deltaTime * r * 200.0f);
