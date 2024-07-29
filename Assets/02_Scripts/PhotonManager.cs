@@ -60,5 +60,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("방 입장 완료 !!");
+
+        // Player 생성
+        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
     }
 }
