@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 1500.0f);
 
+        Destroy(this.gameObject, 3.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
