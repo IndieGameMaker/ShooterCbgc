@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
         if (pv.IsMine)
         {
             Camera.main.transform.SetParent(this.transform);
-            Camera.main.transform.position = new Vector3(0, 5, -5);
-            Camera.main.transform.rotation = Quaternion.Euler(30, 0, 0);
+            Camera.main.transform.localPosition = new Vector3(0, 5, -5);
+            Camera.main.transform.localRotation = Quaternion.Euler(30, 0, 0);
         }
     }
 
