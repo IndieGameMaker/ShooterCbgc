@@ -73,7 +73,9 @@ public class PlayerController : MonoBehaviour
             if (hp <= 0)
             {
                 string nickName = coll.gameObject.GetComponent<Bullet>().nickName;
-                string msg = $"{pv.Owner.NickName} is killed by {nickName}";
+                string msg = $"{pv.Owner.NickName} is killed by {nickName}\n";
+                msgText.text += msg;
+
                 Debug.Log(msg);
                 PlayerDie();
             }
