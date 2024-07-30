@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePos;
     [SerializeField] private TMP_Text nickName;
+    [SerializeField] private TMP_Text msgText;
 
     void Start()
     {
