@@ -53,9 +53,9 @@ public class PlayerController : MonoBehaviour
     }
 
     [PunRPC]
-    void Fire()
+    void Fire(string nickName)
     {
-        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        var bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
     }
 
     private int hp = 100;
