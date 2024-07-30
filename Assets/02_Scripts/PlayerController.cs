@@ -42,7 +42,14 @@ public class PlayerController : MonoBehaviour
         // 발사로직
         if (isFire)
         {
-            Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            Fire();
+            pv.RPC(nameof(Fire), RpcTarget.Others);
         }
+    }
+
+    [PunRPC]
+    void Fire()
+    {
+        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
     }
 }
