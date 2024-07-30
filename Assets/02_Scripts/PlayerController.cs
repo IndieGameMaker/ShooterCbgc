@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         // 발사로직
         if (isFire)
         {
-            pv.RPC(nameof(Fire), RpcTarget.AllViaServer);
+            pv.RPC(nameof(Fire), RpcTarget.AllViaServer, PhotonNetwork.NickName);
         }
     }
 
@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     void Fire(string nickName)
     {
         var bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        bullet.GetComponent<Bullet>().nickName = nickName;
     }
 
     private int hp = 100;
