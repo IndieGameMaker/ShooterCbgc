@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private PhotonView pv;
 
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform firePos;
+
     void Start()
     {
         pv = GetComponent<PhotonView>();
