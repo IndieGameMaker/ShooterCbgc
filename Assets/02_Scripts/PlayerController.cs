@@ -65,6 +65,9 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.collider.CompareTag("BULLET"))
         {
+            string nickName = coll.gameObject.GetComponent<Bullet>().nickName;
+            string msg = $"{pv.Owner.NickName} is killed by {nickName}";
+
             Destroy(coll.gameObject);
             hp -= 10;
             if (hp <= 0)
