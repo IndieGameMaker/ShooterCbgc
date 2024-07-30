@@ -51,4 +51,19 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(bulletPrefab, firePos.position, firePos.rotation);
     }
+
+    private int hp = 100;
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+            hp -= 10;
+            if (hp <= 0)
+            {
+                PlayerDie();
+            }
+        }
+    }
 }
