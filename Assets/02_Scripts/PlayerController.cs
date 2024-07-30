@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerDie()
     {
         SetVisible(false);
+        GetComponent<CapsuleCollider>().enabled = false;
         Invoke(nameof(RespwanPlayer), 3.0f);
     }
 
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         hp = 100;
         SetVisible(true);
+        GetComponent<CapsuleCollider>().enabled = true;
     }
 
     void SetVisible(bool isVisible)
