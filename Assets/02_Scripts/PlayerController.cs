@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         pv = GetComponent<PhotonView>();
 
-        msgText = GameObject.Find("Canvas").transform.Find("Panel/Text").GetComponent<TMP_Text>();
+        msgText = GameObject.FindGameObjectWithTag("MSG").GetComponent<TMP_Text>();
+        //msgText = GameObject.Find("Canvas").transform.Find("Panel/Text").GetComponent<TMP_Text>();
 
         // 닉네임 설정
         nickName.text = pv.Owner.NickName;
