@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         // 발사로직
         if (isFire)
         {
-
+            Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         }
     }
 }
