@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
 
 // f3610a01-731b-480c-b58c-0e090a363b26
 
@@ -66,4 +67,26 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void PlayerDie()
+    {
+        SetVisible(false);
+        Invoke(nameof(RespwanPlayer), 3.0f);
+    }
+
+    void RespwanPlayer()
+    {
+        hp = 100;
+        SetVisible(true);
+    }
+
+    void SetVisible(bool isVisible)
+    {
+        var meshs = GetComponentsInChildren<MeshRenderer>();
+        foreach (var mesh in meshs)
+        {
+            mesh.enabled = isVisible;
+        }
+    }
+
 }
