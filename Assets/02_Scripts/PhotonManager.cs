@@ -61,7 +61,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("방 입장 완료 !!");
 
+        Vector3 pos = new Vector3(Random.Range(-40, 40),
+                                  0,
+                                  Random.Range(-40, 40));
+
         // Player 생성
-        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
+        PhotonNetwork.Instantiate("Player", pos, Quaternion.identity, 0);
     }
 }
