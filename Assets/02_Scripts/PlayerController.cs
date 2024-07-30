@@ -2,6 +2,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System;
+using TMPro;
 
 // f3610a01-731b-480c-b58c-0e090a363b26
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePos;
+    [SerializeField] private TMP_Text nickName;
 
     void Start()
     {
