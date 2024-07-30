@@ -42,8 +42,7 @@ public class PlayerController : MonoBehaviour
         // 발사로직
         if (isFire)
         {
-            Fire();
-            pv.RPC(nameof(Fire), RpcTarget.Others);
+            pv.RPC(nameof(Fire), RpcTarget.AllViaServer);
         }
     }
 
