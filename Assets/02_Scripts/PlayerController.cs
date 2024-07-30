@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         pv = GetComponent<PhotonView>();
         //this.enabled = pv.IsMine;
+        firePos = transform.Find("Body/Gun/FirePos");
     }
 
     void Update()
