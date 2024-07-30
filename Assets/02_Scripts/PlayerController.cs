@@ -23,7 +23,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pv = GetComponent<PhotonView>();
-        //this.enabled = pv.IsMine;
+
+        // 닉네임 설정
+        nickName.text = pv.Owner.NickName;
+
         firePos = transform.Find("Body/Gun/FirePos");
         if (pv.IsMine)
         {
